@@ -1,11 +1,11 @@
-#include "tictactoewidget.hpp"
+#include "mainwindow.hpp"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
-  TicTacToeWidget w;
-  w.show();
+  MainWindow window;
+  window.show();
 
   return a.exec();
 }

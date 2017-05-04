@@ -8,6 +8,8 @@ class QPushButton;
 class TicTacToeWidget : public QWidget
 {
   Q_OBJECT
+  Q_ENUMS(Player)
+  Q_PROPERTY(Player currentPlayer READ currentPlayer WRITE setCurrentPlayer NOTIFY currentPlayerChanged)
 
 public:
   enum class Player {
@@ -32,6 +34,7 @@ signals:
 
 private:
   void setupBoard();
+  Player checkWinCondition(int row, int column);
 
 private:
   QList<QPushButton*> board;
